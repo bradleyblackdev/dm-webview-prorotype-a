@@ -48,7 +48,10 @@ useEffect(() => {
           let value = element.innerHTML
           if (key === "button") {
             const selected = answer === value
-            return <p style={{color: selected ? "pink" : "white", fontWeight: selected ? 800 : 500}} onClick={() => setAnswer(value)}>{value}</p>
+            return <p style={{color: selected ? "pink" : "white", fontWeight: selected ? 800 : 500}} onClick={() => {
+              setAnswer(value)
+              window.history.forward()
+            }}>{value}</p>
           } if (key === "video") {
             return <video width="320" height="240" controls autoPlay>
                 <source src={value} type="video/mp4" />
@@ -60,7 +63,7 @@ useEffect(() => {
           }
         })}
         <Link to="/complete">
-            Complete
+            <h3 onClick={() => window.history.back()}>Complete</h3>
         </Link>
       </body>
     </div>
