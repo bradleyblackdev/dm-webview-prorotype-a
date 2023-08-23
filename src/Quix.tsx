@@ -52,7 +52,7 @@ useEffect(() => {
               setAnswer(value)
               // window.location.reload()
               // window.history.forward()
-              window.location.assign("/complete")
+              // window.location.assign("/complete")
             }}>{value}</p>
           } if (key === "video") {
             return <video width="320" height="240" controls autoPlay>
@@ -64,9 +64,7 @@ useEffect(() => {
             return React.createElement(key, {}, value)
           }
         })}
-        <Link to="/complete">
-            <h3>Complete</h3>
-        </Link>
+        <h3 onClick={() => window.location.assign("/complete")}>Complete</h3>
       </body>
     </div>
   );
