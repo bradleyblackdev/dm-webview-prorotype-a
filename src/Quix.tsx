@@ -51,7 +51,7 @@ useEffect(() => {
             return <p style={{color: selected ? "pink" : "white", fontWeight: selected ? 800 : 500}} onClick={() => {
               setAnswer(value)
               window.history.forward()
-              window.location.reload();
+              // window.location.reload();
             }}>{value}</p>
           } if (key === "video") {
             return <video width="320" height="240" controls autoPlay>
