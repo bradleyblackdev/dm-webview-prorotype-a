@@ -1,7 +1,6 @@
 {
   "name": "dm-webview-prototype-a",
   "version": "0.1.0",
-  "homepage": "https://bradleyblackdev.github.io/dm-webview-prorotype-a/",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.22.10",
