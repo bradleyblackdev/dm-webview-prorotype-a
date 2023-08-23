@@ -50,6 +50,7 @@ useEffect(() => {
             const selected = answer === value
             return <p style={{color: selected ? "pink" : "white", fontWeight: selected ? 800 : 500}} onClick={() => {
               setAnswer(value)
+              // window.location.reload()
               // window.history.forward()
               // window.location.assign("/complete")
             }}>{value}</p>
@@ -64,7 +65,7 @@ useEffect(() => {
           }
         })}
         <Link to="/complete">
-            <h3 onClick={() => window.history.back()}>Complete</h3>
+            <h3>Complete</h3>
         </Link>
       </body>
     </div>
