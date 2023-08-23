@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Quiz from './Quix';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   Routes,
   Link,
   useParams
 } from "react-router-dom";
+
 
 const App = () => {
 
