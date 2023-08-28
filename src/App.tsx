@@ -6,14 +6,29 @@ import {
   Route,
   Routes,
   Link,
-  useParams
 } from "react-router-dom";
 
 
 const App = () => {
 
-const [answer, setAnswer] = useState("")
+const [rawAnswer, setRawAnswer] = useState(`["","apple","3","","twice a week","complete"]`)
+const [page, setPage] = useState(1)
 
+
+const setAnswer = (answer: String) => {
+  if (answer === "complete") {
+    window.location.assign("/complete")
+  }
+}
+
+const pressNext = () => {
+
+}
+
+const answer = () => {
+
+  return "wow"
+}
 
 const elements2: { [key:string]: string }[] = [
   {"h1":"hello newman"},
@@ -39,8 +54,6 @@ const elements3 = Array.from(parsedHtml.querySelectorAll("div")[0].children)
 useEffect(() => {
   console.log(elements3)
 }, [])
-
-const Wow = () => <h1>wow</h1>
 
 return (
   <Router>

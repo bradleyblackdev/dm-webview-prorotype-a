@@ -7,6 +7,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
+import TemplateA from './TemplateA';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
 root.render(
   <React.StrictMode>
     {/* <RouterProvider router={router} /> */}
-    <App />
+    <TemplateA />
   </React.StrictMode>
 );
 

@@ -1,12 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Link,
-  useParams
-} from "react-router-dom";
 
 const Quiz = () => {
 
@@ -50,9 +43,6 @@ useEffect(() => {
             const selected = answer === value
             return <p style={{color: selected ? "pink" : "white", fontWeight: selected ? 800 : 500}} onClick={() => {
               setAnswer(value)
-              // window.location.reload()
-              // window.history.forward()
-              // window.location.assign("/complete")
             }}>{value}</p>
           } if (key === "video") {
             return <video width="320" height="240" controls autoPlay>
