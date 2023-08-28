@@ -1,18 +1,47 @@
-body {
+/* body {
   margin: 0;
-  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', */
-    /* 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', */
-    /* sans-serif; */
-  /* -webkit-font-smoothing: antialiased; */
-  /* -moz-osx-font-smoothing: grayscale; */
-  /* height: 200px; */
-  /* background-color: purple; */
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* align-items: stretch; */
+  font-family:Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --ochsner-dark-blue: #002D5D;
+  --ochsner-light-blue: #0075C9;
+  --ochsner-light-blue-10: #E5F1FA;
+  --white: #FFFFFF;
+  --ochsner-gold: #F0AD00;
+  --ochsner-gold-50: #F8D680;
+  --ochsner-gold-10: #FDF6E5;
+  --midnight-blue: #223D6B;
+  --ochsner-black: #101820;
+  --ochsner-medium-grey: #757679;
+  --ochsner-light-grey: #D9D8D6;
+  --ochsner-very-light-grey: #F1F1F1;
+  --ochsner-blue: #00467F;
+  --connected-health-blue-grey: #6F88AC;
+  --connected-health-slate-green: #547D88;
+
+
+  --text-blue: var(--ochsner-dark-blue);
+  --text-white: var(--white);
+  --icons-blue: var(--ochsner-light-blue);
+  --bg-white: var(--white);
+  --bg-default: var(--ochsner-light-blue-10);
+  --bg-gold: var(--ochsner-gold-10);
+  --bg-dark-blue: var(--midnight-blue);
+  --button-blue-active: var(--ochsner-dark-blue);
+  --button-blue-hover: var(--ochsner-light-blue);
+  --button-gold-active: var(--ochsner-gold);
+  --button-gold-hover-on-dark: var(--ochsner-gold-50);
+  --button-gold-hover-on-white: var(--ochsner-dark-blue);
+  --link-active: var(--ochsner-light-blue);
+  --link-hover: var(--ochsner-dark-blue);
+  --alert-green: #6CB33E;
+  --alert-orange: #FF9015;
+  --alert-red: #CE0E2D;
+  --black: var(--ochsner-black);
+  --grey-medium: var(--ochsner-medium-grey);
+  --grey-light: var(--ochsner-light-grey);
+  --grey-very-light: var(--ochsner-very-light-grey);
 } */

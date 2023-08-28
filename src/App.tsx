@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
+import './MegaTemplate.css';
 import Quiz from './Quix';
 import {
   BrowserRouter as Router,
