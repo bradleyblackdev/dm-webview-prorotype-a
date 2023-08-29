@@ -47,6 +47,8 @@ body {
     --grey-medium: var(--ochsner-medium-grey);
     --grey-light: var(--ochsner-light-grey);
     --grey-very-light: var(--ochsner-very-light-grey);
+
+    background-color: var(--bg-default);
   }
 
 .page {
@@ -134,7 +136,7 @@ button {
     gap: 16px;
 }
 
-.footer button {
+.footer .button {
     display: flex;
     padding: 12px;
     justify-content: center;
@@ -142,7 +144,7 @@ button {
     border-radius: 12px;
 }
 
-.footer button:active {
+.footer .button:active {
     opacity: 75%;
 }
 

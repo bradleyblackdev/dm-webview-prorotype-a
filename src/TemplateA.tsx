@@ -32,8 +32,8 @@ const TemplateA = () => {
                     <button className="primary">Next</button>
                 </div>
                 <div className="footer">
-                    <div className="back2">Back</div>
-                    <div className="primary2">Next</div>
+                    <div className="button back">Back</div>
+                    <div className="button primary">Next</div>
                 </div>
             </div>
         </div>
