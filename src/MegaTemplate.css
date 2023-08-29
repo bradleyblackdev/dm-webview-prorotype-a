@@ -8,6 +8,9 @@ body {
   :root {
     font-family: 'Montserrat', sans-serif;
     /* font-family: 'Comfortaa', sans-serif; */
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 
     --ochsner-dark-blue: #002D5D;
     --ochsner-light-blue: #0075C9;
