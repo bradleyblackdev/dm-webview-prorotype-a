@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
 
 body {
     margin: 0;
@@ -6,6 +7,7 @@ body {
   
   :root {
     font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Comfortaa', sans-serif; */
 
     --ochsner-dark-blue: #002D5D;
     --ochsner-light-blue: #0075C9;
@@ -75,30 +77,36 @@ h1 {
     margin: 0px;
     font-size: 34px;
     line-height: 120%;
+    font-family: 'Comfortaa', sans-serif;
+    color: var(--text-blue);
 }
 
 h2 {
     margin: 0px;
     font-size: 26px;
     line-height: 130%;
+    color: var(--text-blue);
 }
 
 h3 {
     margin: 0px;
     font-size: 21px;
     line-height: 130%;
+    color: var(--text-blue);
 }
 
 h4 {
     margin: 0px;
     font-size: 19px;
     line-height: 130%;
+    color: var(--text-blue);
 }
 
 p {
     margin: 0px;
-    margin: 0;
     font-size: 16px;
+    line-height: 150%;
+    color: var(--text-blue);
 }
 
 p.large {
@@ -134,6 +142,10 @@ button {
     border-radius: 12px;
 }
 
+.footer button:active {
+    opacity: 75%;
+}
+
 .footer .back {
     border: 2px solid var(--button-blue-active);
 }
@@ -143,3 +155,14 @@ button {
     border: 2px solid var(--button-blue-active);
     background: var(--button-blue-active);
 }
+
+.footer .back2 {
+    color: orange;
+    cursor: pointer;
+}
+
+.footer .back2:active {
+    background-color: pink;
+}
+
+
