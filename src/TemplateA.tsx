@@ -28,10 +28,6 @@ const TemplateA = () => {
                 <p><ReactMarkdown>item **44**</ReactMarkdown></p>
                 <div className="spacer" />
                 <div className="footer">
-                    <button className="back">Back</button>
-                    <button className="primary">Next</button>
-                </div>
-                <div className="footer">
                     <div className="button back">Back</div>
                     <div className="button primary">Next</div>
                 </div>
