@@ -21,7 +21,34 @@ const TemplateA = () => {
                 <h2>mobile heading 2</h2>
                 <h3>mobile heading 3</h3>
                 <h4>mobile heading 4</h4>
-
+                <p>item 1</p>
+                <p>item 2</p>
+                <p>item 3</p>
+                <h1>mobile heading 1</h1>
+                <h2>mobile heading 2</h2>
+                <h3>mobile heading 3</h3>
+                <h4>mobile heading 4</h4>
+                <p>item 1</p>
+                <p>item 2</p>
+                <p>item 3</p>
+                <h1>mobile heading 1</h1>
+                <h2>mobile heading 2</h2>
+                <h3>mobile heading 3</h3>
+                <h4>mobile heading 4</h4>
+                <p>item 1</p>
+                <p>item 2</p>
+                <p>item 3</p>
+                <h1>mobile heading 1</h1>
+                <h2>mobile heading 2</h2>
+                <h3>mobile heading 3</h3>
+                <h4>mobile heading 4</h4>
+                <p>item 1</p>
+                <p>item 2</p>
+                <p>item 3</p>
+                <h1>mobile heading 1</h1>
+                <h2>mobile heading 2</h2>
+                <h3>mobile heading 3</h3>
+                <h4>mobile heading 4</h4>
                 <p>item 1</p>
                 <p>item 2</p>
                 <p>item 3</p>
