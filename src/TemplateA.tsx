@@ -11,7 +11,7 @@ import {
 
 const TemplateA = () => {
 
-    let [showStuff, setShowStuff] = useState(false)
+    const [showStuff, setShowStuff] = useState(false)
 
     return (
         <div className="page">
