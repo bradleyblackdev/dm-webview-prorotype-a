@@ -61,6 +61,28 @@ body {
     margin: 0px;
 }
 
+section.route-section {
+    position: absolute;
+    width: 100%;
+    transition: all 0.4s ease-in-out;
+}
+
+.fwd .transition-wrap-enter {
+    transform: translate3d(-100%, 0, 0);
+ }
+
+.fwd .transition-wrap-exit {
+   transform: translate3d(100%, 0, 0);
+ }
+
+.back .transition-wrap-enter {
+    transform: translate3d(100%, 0, 0);
+ }
+
+.back .transition-wrap-exit {
+   transform: translate3d(-100%, 0, 0);
+ }
+
 .page-header {
     padding: 24px 24px 16px 24px;
     margin: 0px;
