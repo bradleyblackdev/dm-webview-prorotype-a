@@ -8,6 +8,8 @@ import {
 } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 import TemplateA from './TemplateA';
+import TemplateB from './TemplateBAnimated';
+import Meh from './Meh';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -22,7 +24,7 @@ const router = createBrowserRouter([
 root.render(
   <React.StrictMode>
     {/* <RouterProvider router={router} /> */}
-    <TemplateA />
+    <Meh />
   </React.StrictMode>
 );
 
