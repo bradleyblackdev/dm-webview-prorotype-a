@@ -39,8 +39,9 @@ const TemplateB = () => {
                             <p>page 2 body</p>
                             <div className="spacer" />
                             <div className="footer">
-                                <div className="button back" onClick = {() => setPage(1)}>Back</div>
-                                <div className="button primary" onClick = {() => setPage(1)}>Next</div>
+                                {/* <div className="button back" onClick = {() => setPage(1)}>Back</div> */}
+                                <div className="button primary"onClick={() => window.location.assign("/complete")}>Close</div>
+                                
                             </div>
                         </div>
                     </div>
