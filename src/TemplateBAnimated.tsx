@@ -25,7 +25,7 @@ const TemplateB = () => {
                         </div>
                         <div className="page-body">
                             <h2>Tell us more about your health</h2>
-                                <li className='ol'>item 1</li>
+                                {/* <li className='ol'>item 1</li>
                                 <li className='ol'>item 2</li>
                                 <li className='ol'>item 3</li>
                                 <li className='ul'>item 1</li>
@@ -36,7 +36,7 @@ const TemplateB = () => {
                                     <div>item 1</div>
                                 </div>
                                 <li className='check'>item 2</li>
-                                <li className='check'>item 3</li>
+                                <li className='check'>item 3</li> */}
                             <div className='divider' />
                             <p><ReactMarkdown className={"markdown-default"} children={body}/></p>
                             <div className="spacer" />
