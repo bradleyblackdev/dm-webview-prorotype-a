@@ -8,6 +8,7 @@ import {
   Link,
 } from "react-router-dom";
 import TemplateB from './TemplateBAnimated';
+import TemplateC from './TemplateCComponents';
 
 
 const App = () => {
@@ -65,7 +66,7 @@ return (
       })
 }
       <Route path="complete" element={<Complete />} /> */}
-          <Route path="" element={<TemplateB />} />
+          <Route path="" element={<TemplateC />} />
     </Routes>
   </Router>
 );

@@ -51,7 +51,7 @@ body {
     --grey-light: var(--ochsner-light-grey);
     --grey-very-light: var(--ochsner-very-light-grey);
 
-    --background-color: var(--bg-default);
+    background-color: var(--bg-default);
   }
 
 .page {
@@ -85,7 +85,7 @@ section.route-section {
  }
 
 .page-header {
-    padding: 24px 24px 16px 24px;
+    padding: 24px 24px 0px 24px;
     margin: 0px;
     min-height: 24px;
 }
@@ -136,6 +136,16 @@ h4 {
     padding-bottom: 16px;
 }
 
+/* h5 = eyebrow */
+h5 {
+    margin: 0px;
+    font-size: 17px;
+    line-height: 130%;
+    font-family: 'Comfortaa', sans-serif;
+    color: var(--text-blue);
+    padding-bottom: 16px;
+}
+
 p {
     margin: 0px;
     font-size: 16px;
@@ -144,28 +154,20 @@ p {
     padding-bottom: 16px;
 }
 
-/* p-default {
-    margin: 0px;
-}
-
-p-large {
-
-}
-
-p-small {
-    
-} */
-
-p.large {
+.p18 {
     font-size: 18px;
 }
 
-p.small {
+.p14 {
     font-size: 14px;
 }
 
 li {
     list-style-type: none;
+}
+
+img {
+    object-fit: fill;
 }
 
 .spacer {
