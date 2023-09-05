@@ -144,6 +144,18 @@ p {
     padding-bottom: 16px;
 }
 
+/* p-default {
+    margin: 0px;
+}
+
+p-large {
+
+}
+
+p-small {
+    
+} */
+
 p.large {
     font-size: 18px;
 }

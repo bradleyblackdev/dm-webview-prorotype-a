@@ -17,13 +17,13 @@ const root = ReactDOM.createRoot(
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />
+    element: <TemplateB />
   },
 ]);
 root.render(
   <React.StrictMode>
-    {/* <RouterProvider router={router} /> */}
-    <TemplateB />
+    <RouterProvider router={router} />
+    {/* <TemplateB /> */}
   </React.StrictMode>
 );
 
