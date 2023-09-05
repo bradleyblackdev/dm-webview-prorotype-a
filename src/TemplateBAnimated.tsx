@@ -78,14 +78,15 @@ const TemplateB = () => {
                             <p>item 1</p>
                             <p>item 2</p>
                             <p>item 3</p>
+                            <Link to={{ pathname: "https://ochsner.org/"}} target="_blank"><h4>Get more info</h4></Link>
                             <div className="spacer" />
                             <div className="footer">
-                                {/* <div className="button back" onClick = {() => setPage(1)}>Back</div> */}
-                                {/* <div className="button primary"onClick={() => window.location.assign("/complete")}>Close</div> */}
-                                <li>
+                                <div className="button back" onClick = {() => setPage(1)}>Back</div>
+                                <div className="button primary"onClick={() => window.location.assign("/complete")}>Close</div>
+                                {/* <li>
                                 <Link to={{ pathname: "https://ochsner.org/" }} target="_blank">Open outside URL</Link>
                                 <Link to="/complete"><p>Close</p></Link>
-                                </li>
+                                </li> */}
 
                             </div>
                         </div>
