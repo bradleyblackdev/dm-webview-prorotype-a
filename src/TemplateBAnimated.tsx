@@ -79,7 +79,7 @@ const TemplateB = () => {
                             <p>item 2</p>
                             <p>item 3</p>
                             <Link to={{ pathname: "https://ochsner.org/"}} target="_blank"><h4>Get more info</h4></Link>
-                            <Link to="https://ochsner.org/"><h4>Get more info</h4></Link>
+                            <Link to="https://ochsner.org/"><h4>Get more info here</h4></Link>
 
                             <div className="spacer" />
                             <div className="footer">
