@@ -7,6 +7,7 @@ import {
   Routes,
   Link,
 } from "react-router-dom";
+import TemplateB from './TemplateBAnimated';
 
 
 const App = () => {
@@ -58,8 +59,13 @@ useEffect(() => {
 return (
   <Router>
     <Routes>
-      <Route path="/" element={<Quiz />}/>
-      <Route path="complete" element={<Complete />} />
+      {/* {["/", "hello"].map(path => {
+        return <Route path={path} element={<TemplateB />}/>
+
+      })
+}
+      <Route path="complete" element={<Complete />} /> */}
+          <Route path="" element={<TemplateB />} />
     </Routes>
   </Router>
 );
