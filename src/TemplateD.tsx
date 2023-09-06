@@ -31,11 +31,11 @@ enum ModuleComponent {
     buttonNext = "buttonNext"
 }
 
-type TemplateCProps = {
+type TemplateDProps = {
     updatePage: (page: number) => void
 }
 
-const TemplateC = ({ updatePage }: TemplateCProps) => {
+const TemplateD = ({ updatePage }: TemplateDProps) => {
 
     const moduleComponents: { [key in ModuleComponent]?: string }[] = [
         {pageHeader:""},
@@ -43,25 +43,25 @@ const TemplateC = ({ updatePage }: TemplateCProps) => {
         {pageBody: ""},
         // {iconWithText: "lightbulbIcon | Expert Tip"},
 
-        // {h1: "this is an h1 header"},
-        // {h2: "this is an h2 header"},
-        // {h3: "this is an **h3** header"},
-        // {h4: "this is an h4 header"},
-        // {eyebrow: "this is an eyebrow"},
-        // {p: "this is **default** body font, that wraps to another line"},
-        // {p18: "this is the **larger** sized body font"},
-        // {p14: "this is the **smaller** sized body font"},
-        // {divider: ""},
+        {h1: "this is an h1 header"},
+        {h2: "this is an h2 header"},
+        {h3: "this is an **h3** header"},
+        {h4: "this is an h4 header"},
+        {eyebrow: "this is an eyebrow"},
+        {p: "this is **default** body font, that wraps to another line"},
+        {p18: "this is the **larger** sized body font"},
+        {p14: "this is the **smaller** sized body font"},
+        {divider: ""},
         // {img: "foodsHighInSodium"},
         // {video: "https://inhlrtrackdev.ochsner.org/Causeway/Videos/BP_Reading.mp4"},
-        {ul: "this is an unordered item"},
-        {ol: "1this is an ordered item"},
-        {ol: "2this is the 2nd item"},
-        {ol: "3this is the 3rd item in the list, and it wraps"},
-        {check: "This is a checked item that wraps, and wraps again, and again"},
-        {pageFooter: ""},
-        {buttonBack: "Back"},
-        {buttonNext: "Next"}
+        // {ul: "this is an unordered item"},
+        // {ol: "1this is an ordered item"},
+        // {ol: "2this is the 2nd item"},
+        // {ol: "3this is the 3rd item in the list, and it wraps"},
+        // {check: "This is a checked item that wraps, and wraps again, and again"},
+        // {pageFooter: ""},
+        // {buttonBack: "Back"},
+        // {buttonNext: "Next"}
     ]
 
     const headerIndex = moduleComponents.map(component => Object.keys(component)).flat().indexOf("pageHeader")
@@ -131,45 +131,13 @@ const TemplateC = ({ updatePage }: TemplateCProps) => {
                 })}
                 <div className="spacer" />
                 <div className="footer">
-                    <div className="button back" onClick = {() => updatePage(1)}>Back</div>
-                    <div className="button primary"onClick={() => window.location.assign("/complete")}>Close</div>
+                    {/* <div className="button back" onClick = {() => updatePage(1)}>Back</div> */}
+                    <div className="button primary" onClick = {() => updatePage(2)}>Next</div>
+                    {/* <div className="button primary"onClick={() => window.location.assign("/complete")}>Close</div> */}
                 </div>
             </div>
         </div>
     );
 }
 
- export default TemplateC;
-
-interface Module {
-    pages: Page[], //ordered so index can be used as a page number reference
-    pageData: [PageID:String]
-    conditionalPageLogic: any
-}
-
-interface Page {
-    params: PageParams
-    contents: String //html could be used, and parsed into
-    questionContent?: String
-}
-
-interface PageParams {
-    pageType: String // Intro, Page, Result
-    questionID: String
-    data: String
-
-    //nice to have
-    // progress: Number
-}
-
-// const DemoA: Module = {
-//     pages: [
-//         {params: {
-//             pageType: "",
-//             questionID: "",
-//             data: ""
-//         },
-//         contents: "HTML content"
-//     }
-// ]
-// }
+ export default TemplateD;

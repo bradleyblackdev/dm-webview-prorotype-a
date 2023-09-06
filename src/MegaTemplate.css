@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
 
 body {
@@ -100,7 +100,7 @@ section.route-section {
     padding: 24px;
 }
 
-h1 {
+.h1 {
     margin: 0px;
     font-size: 34px;
     line-height: 120%;
@@ -109,7 +109,7 @@ h1 {
     padding-bottom: 16px;
 }
 
-h2 {
+.h2 {
     margin: 0px;
     font-size: 26px;
     line-height: 130%;
@@ -118,7 +118,7 @@ h2 {
     padding-bottom: 16px;
 }
 
-h3 {
+.h3 {
     margin: 0px;
     font-size: 21px;
     line-height: 130%;
@@ -127,7 +127,7 @@ h3 {
     padding-bottom: 16px;
 }
 
-h4 {
+.h4 {
     margin: 0px;
     font-size: 19px;
     line-height: 130%;
@@ -136,8 +136,7 @@ h4 {
     padding-bottom: 16px;
 }
 
-/* h5 = eyebrow */
-h5 {
+.eyebrow {
     margin: 0px;
     font-size: 17px;
     line-height: 130%;
@@ -146,7 +145,7 @@ h5 {
     padding-bottom: 16px;
 }
 
-p {
+.p {
     margin: 0px;
     font-size: 16px;
     line-height: 150%;
@@ -156,14 +155,16 @@ p {
 
 .p18 {
     font-size: 18px;
+    line-height: 150%;
+    color: var(--text-blue);
+    padding-bottom: 16px;
 }
 
 .p14 {
     font-size: 14px;
-}
-
-li {
-    list-style-type: none;
+    line-height: 150%;
+    color: var(--text-blue);
+    padding-bottom: 16px;
 }
 
 img {
@@ -176,15 +177,67 @@ img {
 
 .divider {
     padding-bottom: 24px;
-    border-top: 0.5px solid var(--ochsner-blue-grey-50)
-};
+    border-top: 0.5px solid var(--ochsner-blue-grey-50);
+}
 
-.list {
+.arf {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-start;
     gap: 12px;
     align-self: stretch;
+}
+
+.checkmark {
+    color: var(--ochsner-light-blue);
+    height: 22px;
+    width: 22px;
+    margin-left: -2px;
+}
+
+.bullet {
+    color: var(--ochsner-gold);
+    height: 24px;
+    width: 6px;
+    margin-right: 10px;
+    margin-left: 2px;
+}
+
+.ol-circle {
+    height: 26px;
+    width: 26px;
+    font-weight: 600;
+    border-color: var(--ochsner-gold);
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 50%;
+    position: relative;
+    bottom: 2px;
+}
+
+.ol-number {
+    margin: 0px;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--text-blue);
+    text-align: center;
+    color: var(--text-blue);
+    position: relative;
+    top: 2px;
+}
+
+.list {
+    display: flex;
+    gap: 12px;
+    padding-bottom: 8px;
+}
+
+.list-item {
+    flex: 1;
+    margin: 0px;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--text-blue);
 }
 
 button {
@@ -225,7 +278,8 @@ button {
     background: var(--button-blue-active);
 }
 
-.markdown-default {
+.markdown-default > * {
+    margin: 0px;
     white-space: pre-wrap;
-    line-height: 0px;
 }
+
