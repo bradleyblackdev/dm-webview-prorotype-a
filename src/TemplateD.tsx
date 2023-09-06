@@ -50,7 +50,7 @@ const TemplateD = ({ updatePage }: TemplateDProps) => {
         {eyebrow: "this is an eyebrow"},
         {p: "this is **default** body font, that wraps to another line"},
         {p18: "this is the **larger** sized body font"},
-        {p14: "this is the **smaller** sized body font"},
+        {p14: "this is the **smaller** sized body font, that wraps to another line"},
         {divider: ""},
         // {img: "foodsHighInSodium"},
         // {video: "https://inhlrtrackdev.ochsner.org/Causeway/Videos/BP_Reading.mp4"},
