@@ -5,7 +5,7 @@ import './MegaTemplate.css'
 import { Link } from 'react-router-dom'
 import { BsCheckLg, BsCircleFill } from 'react-icons/bs'
 
-enum ModuleComponent {
+enum ContentComponent {
     pageHeader = "pageHeader",
     pageBody = "pageBody",
     pageFooter = "pageFooter",
@@ -37,7 +37,7 @@ type TemplateCProps = {
 
 const TemplateC = ({ updatePage }: TemplateCProps) => {
 
-    const moduleComponents: { [key in ModuleComponent]?: string }[] = [
+    const moduleComponents: { [key in ContentComponent]?: string }[] = [
         {pageHeader:""},
         // {pageXofX: ""},
         {pageBody: ""},
@@ -83,31 +83,31 @@ const TemplateC = ({ updatePage }: TemplateCProps) => {
             }
             <div className="page-body">
                 {moduleComponents.slice(bodyIndex, footerIndex).map((component, index) => {
-                    const key: ModuleComponent = ModuleComponent[Object.keys(component)[0] as keyof typeof ModuleComponent]
+                    const key: ContentComponent = ContentComponent[Object.keys(component)[0] as keyof typeof ContentComponent]
                     // let key = Object.keys(component)[0]
                     const value = Object.values(component)[0]
                     switch(key) {
-                        case ModuleComponent.iconWithText: return <h4>icon with text</h4>
-                        case ModuleComponent.img: return <img src={`${value}`}/>
-                        case ModuleComponent.video: return (
+                        case ContentComponent.iconWithText: return <h4>icon with text</h4>
+                        case ContentComponent.img: return <img src={`${value}`}/>
+                        case ContentComponent.video: return (
                             <video controls>
                                 <source src={value} type="video/mp4" />
                             </video>
                         )
-                        case ModuleComponent.divider: return <div className='divider' />
-                        case ModuleComponent.check: return (
+                        case ContentComponent.divider: return <div className='divider' />
+                        case ContentComponent.check: return (
                             <div className="list" >
                                 <BsCheckLg className="checkmark" />
                                 <ReactMarkdown className={`markdown-default list-item`} children={value}/>
                             </div>
                         )
-                        case ModuleComponent.ul: return (
+                        case ContentComponent.ul: return (
                             <div className="list" >
                                 <BsCircleFill size={6} className="bullet" />
                                 <ReactMarkdown className={`markdown-default list-item`} children={value}/>
                             </div>
                         )
-                        case ModuleComponent.ol: return (
+                        case ContentComponent.ol: return (
                             <div className="list" >
                                 <div className='ol-circle'>
                                     <div className='ol-number'>{value[0]}</div>
@@ -115,7 +115,7 @@ const TemplateC = ({ updatePage }: TemplateCProps) => {
                                 <ReactMarkdown className={`markdown-default list-item`} children={value.slice(1)}/>
                             </div>
                         )
-                        case ModuleComponent.accBody: 
+                        case ContentComponent.accBody: 
                             return (
                             <div onClick={() => setAccBodyIndex(index)}>
                                 {accBodyIndex === index &&

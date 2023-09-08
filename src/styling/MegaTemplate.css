@@ -98,6 +98,58 @@ section.route-section {
     margin: 0px 24px 32px 24px;
     border-radius: 12px;
     padding: 24px;
+    gap: 8px;
+}
+
+.accordion-rect {
+    background-color: var(--bg-default);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.accordion-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 4px;
+    gap: 8px;
+}
+
+.accordionHead {
+    margin: 0px;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--text-blue);
+    font-weight: 600;
+    flex: 1;
+}
+
+.accordionBody {
+    margin: 0px;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--text-blue);
+    padding-top: 16px;
+    /* font-weight: 600; */
+}
+
+.accordion-plus {
+    color: var(--ochsner-blue);
+    height: 24px;
+    width: 24px;
+}
+
+.accordion-minus {
+    color: var(--ochsner-light-blue);
+    height: 24px;
+    width: 24px;
+}
+
+.accordion-divider {
+    border-top: 0.5px solid var(--ochsner-blue-grey-50);
+    background-color: pink;
+    margin: 16px 0px;
 }
 
 .h1 {
@@ -106,7 +158,7 @@ section.route-section {
     line-height: 120%;
     font-family: 'Comfortaa', sans-serif;
     color: var(--text-blue);
-    padding-bottom: 16px;
+    padding-bottom: 8px;
 }
 
 .h2 {
@@ -115,7 +167,7 @@ section.route-section {
     line-height: 130%;
     font-family: 'Comfortaa', sans-serif;
     color: var(--text-blue);
-    padding-bottom: 16px;
+    padding-bottom: 8px;
 }
 
 .h3 {
@@ -124,7 +176,7 @@ section.route-section {
     line-height: 130%;
     font-family: 'Comfortaa', sans-serif;
     color: var(--text-blue);
-    padding-bottom: 16px;
+    padding-bottom: 8px;
 }
 
 .h4 {
@@ -133,7 +185,7 @@ section.route-section {
     line-height: 130%;
     font-family: 'Comfortaa', sans-serif;
     color: var(--text-blue);
-    padding-bottom: 16px;
+    padding-bottom: 8px;
 }
 
 .eyebrow {
@@ -142,7 +194,7 @@ section.route-section {
     line-height: 130%;
     font-family: 'Comfortaa', sans-serif;
     color: var(--text-blue);
-    padding-bottom: 16px;
+    padding-bottom: 8px;
 }
 
 .p {
@@ -150,21 +202,21 @@ section.route-section {
     font-size: 16px;
     line-height: 150%;
     color: var(--text-blue);
-    padding-bottom: 16px;
+    padding-bottom: 8px;
 }
 
 .p18 {
     font-size: 18px;
     line-height: 150%;
     color: var(--text-blue);
-    padding-bottom: 16px;
+    padding-bottom: 8px;
 }
 
 .p14 {
     font-size: 14px;
     line-height: 150%;
     color: var(--text-blue);
-    padding-bottom: 16px;
+    padding-bottom: 8px;
 }
 
 img {
@@ -176,7 +228,7 @@ img {
 }
 
 .divider {
-    padding-bottom: 24px;
+    padding-bottom: 16px;
     border-top: 0.5px solid var(--ochsner-blue-grey-50);
 }
 
@@ -229,7 +281,6 @@ img {
 .list {
     display: flex;
     gap: 12px;
-    padding-bottom: 8px;
 }
 
 .list-item {
@@ -278,8 +329,15 @@ button {
     background: var(--button-blue-active);
 }
 
+.pressable:active {
+    opacity: 75%;
+}
+
+.markdown-default {
+    margin: 0px;
+}
+
 .markdown-default > * {
     margin: 0px;
     white-space: pre-wrap;
 }
-

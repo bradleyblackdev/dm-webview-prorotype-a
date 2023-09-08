@@ -5,6 +5,7 @@ import './MegaTemplate.css'
 import { Link } from 'react-router-dom'
 import TemplateC from './TemplateCComponents';
 import TemplateD from './TemplateD';
+import TemplateE from './TemplateE';
 
 const TemplateB = () => {
 
@@ -30,7 +31,7 @@ const TemplateB = () => {
                 classNames={'transition-wrap'}
             >
                 <section className={`route-section`}>
-                    {page === 1 && <TemplateD updatePage={updatePage}/>
+                    {page === 1 && <TemplateE updatePage={updatePage}/>
                     // <div className="page">
                     //     <div className="page-header">
                     //         <h1>page 1</h1>
@@ -85,7 +86,6 @@ const TemplateB = () => {
                         </div>
                     </div>
                     } */} 
-                    {/* */}
                 </section>
             </CSSTransition>
         </TransitionGroup>

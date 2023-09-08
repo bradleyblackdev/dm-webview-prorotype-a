@@ -1,89 +1,47 @@
 import React, { useState, useEffect } from 'react';
-import './MegaTemplate.css';
-import Quiz from './Quix';
+import { ContentComponent, ContentComponents, Module } from './types';
+import './styling/MegaTemplate.css';
 import {
   BrowserRouter as Router,
   Route,
   Routes,
-  Link,
 } from "react-router-dom";
-import TemplateB from './TemplateBAnimated';
-import TemplateC from './TemplateCComponents';
-import ReactMarkdown from "react-markdown";
+import ModuleView from './ModuleView';
 
 
 
 const App = () => {
 
-const [rawAnswer, setRawAnswer] = useState(`["","apple","3","","twice a week","complete"]`)
-const [page, setPage] = useState(1)
+  const contentComponentsRaw: ContentComponents = [
+    [ContentComponent.pageHeader, ""],
+    [ContentComponent.eyebrow, "Eyebrow text"],
+    [ContentComponent.pageBody, ""],
+    [ContentComponent.p, "Intro text lorem ipsum dolor sit amet, consectetur adipiscing elit.\n&nbsp;\nCurabitur vel ipsum vitae urna semper sodales ac et."],
+    [ContentComponent.accordionHead, "Accordion head 1"],
+    [ContentComponent.accordionBody, "Accordion body 1"],
+    [ContentComponent.accordionHead, "Accordion head 2"],
+    [ContentComponent.accordionBody, "Accordion body 2"],
+    [ContentComponent.h1, "this is an h1 header"],
+    [ContentComponent.h2, "this is an h2 header"],
+    [ContentComponent.h3, "this is an **h3** header"],
+    [ContentComponent.divider, ""],
+    [ContentComponent.h4, "this is an h4 header"],
+    [ContentComponent.pageFooter, ""],
+    [ContentComponent.buttonBack, ""],
+    [ContentComponent.buttonPrimary, ""]
+  ]
 
-
-const setAnswer = (answer: String) => {
-  if (answer === "complete") {
-    window.location.assign("/complete")
+  const testContents: Module = {
+    pages: [{contentComponents: contentComponentsRaw, questionComponents: []}]
   }
-}
 
-const pressNext = () => {
-
-}
-
-const answer = () => {
-
-  return "wow"
-}
-
-const elements2: { [key:string]: string }[] = [
-  {"h1":"hello newman"},
-  {"h2":"please select your favorite fruit"},
-  {"button":"Apple"},
-  {"button":"Banana"},
-  {"video":"https://file-examples.com/storage/fe3b4f721f64dfeffa49f02/2017/04/file_example_MP4_480_1_5MG.mp4"}
-]
-
-const elements3Raw = `
-<div>
-  <h1>hello world</h1>
-  <h2>please select your favorite meal</h2>
-  <button>Salad</button>
-  <button>Pizza</button>
-  <video>https://file-examples.com/storage/fe3b4f721f64dfeffa49f02/2017/04/file_example_MP4_480_1_5MG.mp4</video>
-</div>
-`
-let parser = new DOMParser()
-let parsedHtml = parser.parseFromString(elements3Raw, "text/html")
-const elements3 = Array.from(parsedHtml.querySelectorAll("div")[0].children)
-
-useEffect(() => {
-  console.log(elements3)
-}, [])
-
-return (
-  <Router>
-    <Routes>
-      {/* {["/", "hello"].map(path => {
-        return <Route path={path} element={<TemplateB />}/>
-
-      })
-}
-      <Route path="complete" element={<Complete />} /> */}
-          <Route path="" element={<TemplateB />} />
-    </Routes>
-  </Router>
-);
-
-function Home() {
-return <h2>Homes</h2>;
-}
-
-function Complete() {
-return (<Link to="/">reset</Link>)
-}
-
-function Users() {
-return <h2>Users</h2>;
-}
+  return (
+    <Router>
+      <Routes>
+        <Route path="" element={<ModuleView moduleContents={testContents}/>} />
+      </Routes>
+    </Router>
+  );
 
 }
 

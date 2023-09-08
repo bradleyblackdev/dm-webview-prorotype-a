@@ -6,13 +6,13 @@ import { Link } from 'react-router-dom'
 import { BsCheckLg, BsCircleFill, BsPlusLg, BsDashLg } from 'react-icons/bs'
 
 enum ContentComponent {
-    pageProgress = "pageProgress",
+    pageProgress = "pageProgress", //maybe here or module level
     pageHeader = "pageHeader",
     pageBody = "pageBody",
     pageFooter = "pageFooter",
-    pageXofX = "pageXofX",
-    iconWithText = "iconWithText",
-    didYouKnow = "didYouKnow",
+    pageXofX = "pageXofX", //is this needed in addition to progress bar?
+    iconWithText = "iconWithText", //to do
+    // didYouKnow = "didYouKnow", //nice to have
     img = "img",
     video = "video",
     h1 = "h1",
@@ -33,51 +33,36 @@ enum ContentComponent {
     buttonPrimary = "buttonPrimary"
 }
 
-type TemplateDProps = {
+type TemplateEProps = {
     updatePage: (page: number) => void
 }
 
-const TemplateD = ({ updatePage }: TemplateDProps) => {
+type ContentComponents = [ContentComponent,string][]
 
-    const moduleComponents: { [key in ContentComponent]?: string }[] = [
-        {pageHeader:""},
-        // {pageXofX: ""},
-        {eyebrow: "i have 2 eyebrows"},
-        {pageBody: ""},
-        // {iconWithText: "lightbulbIcon | Expert Tip"},
-        {h1: "this is an h1 header"},
-        // {h2: "this is an h2 header"},
-        {accordionHead: "accordion head 1"},
-        {accordionBody: "accordion body 1"},
-        {accordionHead: "accordion head 2"},
-        {accordionBody: "accordion body 2"},
-        // {accordionHead: "accordion head 3"},
-        {h1: "this is an h1 header"},
-        {h2: "this is an h2 header"},
-        {h3: "this is an **h3** header"},
-        // {h4: "this is an h4 header"},
-        // {eyebrow: "this is an eyebrow"},
-        // {p: "this is **default** body font, that wraps to another line"},
-        // {p18: "this is the **larger** sized body font"},
-        // {p14: "this is the **smaller** sized body font, that wraps to another line"},
-        // {divider: ""},
-        // {img: "foodsHighInSodium"},
-        // {ul: "this is an unordered item"},
-        // {ol: "1this is an ordered item"},
-        // {ol: "2this is the 2nd item"},
-        // {ol: "3this is the 3rd item in the list, and it wraps"},
-        // {check: "This is a checked item that wraps, and wraps again, and again"},
-        // {didYouKnow: "{title: 'Did You Know?', image: 'lightbulb', subtext: 'supporting text goes here'}"},
-        // {pageFooter: ""},
-        // {buttonBack: "Back"},
-        // {buttonPrimary: "Next"}
+const TemplateE = ({ updatePage }: TemplateEProps) => {
+
+    const moduleComponentsRaw: ContentComponents = [
+        [ContentComponent.pageHeader, ""],
+        [ContentComponent.pageBody, ""],
+        [ContentComponent.accordionHead, "Accordion head 1"],
+        [ContentComponent.accordionBody, "Accordion body 1"],
+        [ContentComponent.accordionHead, "Accordion head 2"],
+        [ContentComponent.buttonBack, "hello"],
+        [ContentComponent.accordionBody, "Accordion body 2"],
+        [ContentComponent.divider, ""],
+        [ContentComponent.h1, "this is an h1 header"],
+        [ContentComponent.h2, "this is an h2 header"],
+        [ContentComponent.h3, "this is an **h3** header"],
+        [ContentComponent.h4, "this is an h4 header"],
+        [ContentComponent.pageFooter, ""],
     ]
 
-    const moduleComponentsJSON = JSON.stringify(moduleComponents)
+    const moduleComponentsJSON = JSON.stringify(moduleComponentsRaw)
+    const moduleComponents: ContentComponents = JSON.parse(moduleComponentsJSON)
 
-    const headerIndex = moduleComponents.map(component => Object.keys(component)).flat().indexOf("pageHeader")
-    const bodyIndex = moduleComponents.map(component => Object.keys(component)).flat().indexOf("pageBody")
-    const footerIndex = moduleComponents.map(component => Object.keys(component)).flat().indexOf("pageFooter")
+    const headerIndex = moduleComponents.findIndex(component => component[0] === ContentComponent.pageHeader)
+    const bodyIndex = moduleComponents.findIndex(component => component[0] === ContentComponent.pageBody)
+    const footerIndex = moduleComponents.findIndex(component => component[0] === ContentComponent.pageFooter)
 
     // const headerComponents
     const bodyComponents = moduleComponents.slice(bodyIndex, footerIndex)
@@ -94,9 +79,8 @@ const TemplateD = ({ updatePage }: TemplateDProps) => {
             }
             <div className="page-body">
                 {bodyComponents.map((component, index) => {
-                    const key: ContentComponent = ContentComponent[Object.keys(component)[0] as keyof typeof ContentComponent]
-                    // let key = Object.keys(component)[0]
-                    const value = Object.values(component)[0]
+                    const key = component[0]
+                    const value: string = component[1]
                     switch(key) {
                         case ContentComponent.iconWithText: return <h4>icon with text</h4>
                         case ContentComponent.img: return <img src={`${value}`}/>
@@ -127,15 +111,16 @@ const TemplateD = ({ updatePage }: TemplateDProps) => {
                             </div>
                         )
                         case ContentComponent.accordionHead: 
-                        if (index !== 0 && Object.keys(bodyComponents[index - 1])[0].includes("accordion")) {
+                        // if (index !== 0 && Object.keys(bodyComponents[index - 1])[0].includes("accordion")) {
+                        if (index !== 0 && bodyComponents[index - 1][0].includes("accordion")) {
                             break
                         }
-                        const finalAccordionIndex = bodyComponents.slice(index).findIndex(element => !Object.keys(element)[0].includes("accordion"))
+                        const finalAccordionIndex = bodyComponents.slice(index).findIndex(element => !element[0].includes("accordion"))
                         const arf = (
                             bodyComponents.slice(index, finalAccordionIndex + index).map((e, i, a) => {
-                                if (Object.keys(e)[0] === key) {
-                                    const headerText = Object.values(e)[0]
-                                    const bodyText = Object.values(a[i + 1])[0]
+                                if (e[0] === key) {
+                                    const headerText = e[1]
+                                    const bodyText = a[i + 1][1]
                                     const selected = headerText+bodyText === accordionSelection
                                     return (
                                         <div>
@@ -149,32 +134,18 @@ const TemplateD = ({ updatePage }: TemplateDProps) => {
                                 )} else {
                                     return null
                                 }
-                    })
+                            })
                         )
                         return <div className={"accordion-rect"}>
                             {arf}
                             </div>
-                        // return <h3>hello</h3>
                         case ContentComponent.accordionBody: break
-                        // if bodyComponents[index - 1]
-                        // return
-                        // case ContentComponent.accordianBody: 
-                        //     return (
-                        //     <div onClick={() => setAccBodyIndex(index)}>
-                        //         {accBodyIndex === index &&
-                        //             <ReactMarkdown className={`markdown-default ${key}`} children={value}/>
-                        //         }
-                        //     </div>
-                        //     )
                         default: return <ReactMarkdown className={`markdown-default ${key}`} children={value}/>
                     }
-
-                    // return <h1>{key}</h1>
-
                 })}
                 <div className="spacer" />
                 <div className="footer">
-                    {/* <div className="button back" onClick = {() => updatePage(1)}>Back</div> */}
+                    <div className="button back" onClick = {() => updatePage(1)}>Back</div>
                     <div className="button primary" onClick = {() => updatePage(2)}>Next</div>
                     {/* <div className="button primary"onClick={() => window.location.assign("/complete")}>Close</div> */}
                 </div>
@@ -183,4 +154,6 @@ const TemplateD = ({ updatePage }: TemplateDProps) => {
     );
 }
 
- export default TemplateD;
+ export default TemplateE;
+
+
